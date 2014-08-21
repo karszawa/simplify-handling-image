@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>file uploder</title>
+</head>
+<body>
+
+<input type="file" id="input" name="file"/>
+<img src="" id="output" alt="no image" style="height: 100px; width: 100px;"  />
+
+<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<script src="./js/jquery.getLocalImage.js" type="text/javascript"></script>
+<script src="./js/jquery.setAdjustedImage.js" type="text/javascript"></script>
+
+<script>
+  // getLocalImage(id, callback_function)
+  // callback_function will receive a binary image data
+	$(this).getLocalImage('#input', function(image) { return $(this).setAdjustedImage('#output', image, "100px", "100px"); } );
+</script>
+</body>
+</html>
