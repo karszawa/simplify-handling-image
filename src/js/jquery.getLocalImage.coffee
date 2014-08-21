@@ -14,4 +14,3 @@ do ($=jQuery) ->
 				callback event.target.result
 
 			fileReader.readAsDataURL file
-
