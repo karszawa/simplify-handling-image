@@ -1,16 +1,16 @@
-do ($=jQuery) ->
-	$.fn.getLocalImage = (id, callback) ->
-		$(id).change () ->
-			# no images was selected
-			return unless this.files.length
 
-			# not image files was seelected
-			# return if TODO
+$.fn.getLocalImage = (id, callback) ->
+	$(id).change () ->
+		# no images was selected
+		return unless this.files.length
 
-			fileReader = new FileReader
-			file = this.files[0]
+		# not image files was seelected
+		# return if TODO
 
-			fileReader.onload = (event) ->
-				callback event.target.result
+		fileReader = new FileReader
+		file = this.files[0]
 
-			fileReader.readAsDataURL file
+		fileReader.onload = (event) ->
+			callback event.target.result
+
+		fileReader.readAsDataURL file
