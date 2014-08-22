@@ -1,6 +1,5 @@
-(function() {
+(function($) {
   var adjustImage;
-
   $.fn.setAdjustedImage = function(id, binaryImage, width, height, centeringHorizontal, centeringVertical) {
     var image, oHeight, oWidth, _ref;
     if (centeringHorizontal == null) {
@@ -17,8 +16,7 @@
       return adjustImage(id, oWidth, oHeight, this.width, this.height, centeringHorizontal, centeringVertical);
     };
   };
-
-  adjustImage = function(id, oWidth, oHeight, bWidth, bHeight, centeringHorizontal, centeringVertical) {
+  return adjustImage = function(id, oWidth, oHeight, bWidth, bHeight, centeringHorizontal, centeringVertical) {
     if (bWidth / bHeight > oWidth / oHeight) {
       $(id).css('width', oWidth + "px");
       $(id).css('height', 'auto');
@@ -39,5 +37,4 @@
       }
     }
   };
-
-}).call(this);
+})(jQuery);

@@ -1,5 +1,5 @@
-(function() {
-  $.fn.getLocalImage = function(id, callback) {
+(function($) {
+  return $.fn.getLocalImage = function(id, callback) {
     return $(id).change(function() {
       var file, fileReader;
       if (!this.files.length) {
@@ -18,5 +18,4 @@
       return fileReader.readAsDataURL(file);
     });
   };
-
-}).call(this);
+})(jQuery);
