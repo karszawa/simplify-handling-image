@@ -3,10 +3,15 @@
     return $(id).change(function() {
       var file, fileReader;
       if (!this.files.length) {
+        console.log('no images were selected');
+        return;
+      }
+      file = this.files[0];
+      if (file.type.slice(0, 5) !== 'image') {
+        console.log('not image file was selected');
         return;
       }
       fileReader = new FileReader;
-      file = this.files[0];
       fileReader.onload = function(event) {
         return callback(event.target.result);
       };

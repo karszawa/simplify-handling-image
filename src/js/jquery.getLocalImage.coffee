@@ -1,14 +1,17 @@
 
 $.fn.getLocalImage = (id, callback) ->
 	$(id).change () ->
-		# no images was selected
-		return unless this.files.length
+		unless this.files.length
+			console.log 'no images were selected'
+			return
 
-		# not image files was seelected
-		# return if TODO
+		file = this.files[0]
+
+		unless file.type[0...5] == 'image'
+			console.log 'not image file was selected'
+			return
 
 		fileReader = new FileReader
-		file = this.files[0]
 
 		fileReader.onload = (event) ->
 			callback event.target.result
