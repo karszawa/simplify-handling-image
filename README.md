@@ -17,8 +17,8 @@ First, you have to put `input` tag and `img` tag in html with `id`.
 
 Next, call localImageReader with the `id` of `input` and `callback_function`.
 ```javascript
-$(this).localImageReader('#input', function(image) {
-	return $(this).adjustImage('#output', image, "500px", "500px");
+$('input#input').localImageReader(function(image) {
+	return $('img#output').adjustImage(image, "500px", "500px");
 });
 ```
 
