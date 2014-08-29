@@ -22,7 +22,7 @@ do ($=jQuery) ->
 			$(this).css {
 				'width': options.width + options.unit
 				'height': 'auto'
-				'margin-top': if options.centeringVertical then Math.floor((options.height - options.height * image.height / image.width) / 2) + options.unit else 0
+				'margin-top': if !options.centeringVertical then Math.floor((options.height - options.height * image.height / image.width) / 2) + options.unit else 0
 				'margin-left': 0
 			}
 		else
@@ -30,5 +30,5 @@ do ($=jQuery) ->
 				'width': 'auto'
 				'height': options.height + options.unit
 				'margin-top': 0
-				'margin-left': if options.centeringHorizontal then Math.floor((options.width - options.width * image.width / image.height) / 2) + options.unit else 0
+				'margin-left': if !options.centeringHorizontal then Math.floor((options.width - options.width * image.width / image.height) / 2) + options.unit else 0
 			}
