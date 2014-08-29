@@ -20,7 +20,7 @@ Copyright 2014 Hiroaki KARASAWA
       return $(this).css({
         'width': options.width + options.unit,
         'height': 'auto',
-        'margin-top': options.centeringVertical ? Math.floor((options.height - options.height * image.height / image.width) / 2) + options.unit : 0,
+        'margin-top': !options.centeringVertical ? Math.floor((options.height - options.height * image.height / image.width) / 2) + options.unit : 0,
         'margin-left': 0
       });
     } else {
@@ -28,7 +28,7 @@ Copyright 2014 Hiroaki KARASAWA
         'width': 'auto',
         'height': options.height + options.unit,
         'margin-top': 0,
-        'margin-left': options.centeringHorizontal ? Math.floor((options.width - options.width * image.width / image.height) / 2) + options.unit : 0
+        'margin-left': !options.centeringHorizontal ? Math.floor((options.width - options.width * image.width / image.height) / 2) + options.unit : 0
       });
     }
   };
